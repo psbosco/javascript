@@ -1,7 +1,7 @@
 
 
 
-let CodigoRegalo = "AB476HA";
+let CodigoRegalo = "1";
 function Ingreso() {
   let ingresar = false;
   for (let i = 4; i >= 0; i--) {
@@ -28,7 +28,7 @@ function Producto(nombre, precio, stock){
   this.stock= stock;
 }
 
-const producto1 = new Producto("Batidora Para mayonesa.", 45000, 12);
+const producto1 = new Producto("Batidora Para mayonesa.", 60000, 12);
 const producto2 = new Producto("Secador de secadores de pelo.", 25000, 12);
 const producto3 = new Producto("Panquequera para perros.", 45000, 12);
 const producto4 = new Producto("Gel frio y caliente para los dolores.", 10000, 12);
@@ -53,9 +53,14 @@ let exito = Ingreso();
                switch (choose1) {
                  case "1":
                   let CalculadoraPuntos = PuntosRegalos - producto1.precio;
-                  console.log(CalculadoraPuntos);                 
+                  console.log(CalculadoraPuntos);    
+                  if (CalculadoraPuntos >= producto1.precio) {            
                    alert("canje exitoso, te quedan " + (PuntosRegalos - producto1.precio) + " puntos para usar");
                    break;
+                  } 
+                    else {
+                    alert("No te alcanzan tus puntos");
+                    }
                  case "2":
                   let opcion = prompt(
                     "Elegí una opción: \n1 - " + producto1.nombre + "\n2 - " + producto2.nombre +  "\n3 - " + producto2.nombre +  "\n4 - " + producto4.nombre + "\n Presioná X para finalizar."
@@ -72,8 +77,13 @@ let exito = Ingreso();
                  case "1":
                   let CalculadoraPuntos = PuntosRegalos - producto2.precio;
                   console.log(CalculadoraPuntos);
-                   alert("canje exitoso, te quedan " + (PuntosRegalos - producto2.precio) + " puntos para usar");
+                  if (CalculadoraPuntos >= producto2.precio) {            
+                  alert("canje exitoso, te quedan " + (PuntosRegalos - producto2.precio) + " puntos para usar");
                    break;
+                  } 
+                  else {
+                  alert("No te alcanzan tus puntos");
+                  }
                  case "2":
                   let opcion = prompt(
                     "Elegí una opción: \n1 - " + producto1.nombre + "\n2 - " + producto2.nombre +  "\n3 - " + producto3.nombre +  "\n4 - " + producto4.nombre + "\n Presioná X para finalizar."
@@ -90,9 +100,14 @@ let exito = Ingreso();
                switch (choose3) {
                  case "1":
                   let CalculadoraPuntos = PuntosRegalos - producto3.precio;
-                  console.log(CalculadoraPuntos);                 
-                   alert("canje exitoso, te quedan " + (PuntosRegalos - producto3.precio) + " puntos para usar");
+                  console.log(CalculadoraPuntos);
+                  if (CalculadoraPuntos >= producto3.precio) {            
+                  alert("canje exitoso, te quedan " + (PuntosRegalos - producto3.precio) + " puntos para usar");
                    break;
+                  } 
+                  else {
+                  alert("No te alcanzan tus puntos");
+                  }
                  case "2":
                   let opcion = prompt(
                     "Elegí una opción: \n1 - " + producto1.nombre + "\n2 - " + producto2.nombre +  "\n3 - " + producto3.nombre +  "\n4 - " + producto4.nombre + "\n Presioná X para finalizar."
@@ -102,24 +117,29 @@ let exito = Ingreso();
                
                  break;
 
-                 case "4":
-                  alert("vas a canjear  " + producto4.precio + " Puntos de tus " + PuntosRegalos + " Puntos acumulados por " + producto4.nombre);
-                    let choose4=prompt(
-                      "Estás a puntos de canjear tus puntos. es correcto? \n1 SI  \n2 NO ")
-                       switch (choose4) {
-                         case "1":
-                          let CalculadoraPuntos = PuntosRegalos - producto4.precio;
-                          console.log(CalculadoraPuntos);                         
-                           alert("canje exitoso, te quedan " + (PuntosRegalos - producto4.precio) + " puntos para usar");
-                           break;
+         case "4":
+           alert("vas a canjear  " + producto4.precio + " Puntos de tus " + PuntosRegalos + " Puntos acumulados por " + producto4.nombre);
+              let choose4=prompt(
+                "Estás a puntos de canjear tus puntos. es correcto? \n1 SI  \n2 NO ")
+                switch (choose4) {
+                   case "1":
+                   let CalculadoraPuntos = PuntosRegalos - producto4.precio;
+                   console.log(CalculadoraPuntos);
+                  if (CalculadoraPuntos >= producto4.precio) {            
+                  alert("canje exitoso, te quedan " + (PuntosRegalos - producto4.precio) + " puntos para usar");
+                   break;
+                  } 
+                  else {
+                  alert("No te alcanzan tus puntos");
+                  }
                          case "2":
                           let opcion = prompt(
-                            "Elegí una opción: \n1 - " + producto.nombre + "\n2 - " + producto2.nombre +  "\n3 - " + producto3.nombre +  "\n4 - " + producto4.nombre + "\n Presioná X para finalizar."
+                            "Elegí una opción: \n1 - " + producto1.nombre + "\n2 - " + producto2.nombre +  "\n3 - " + producto3.nombre +  "\n4 - " + producto4.nombre + "\n Presioná X para finalizar."
                             );
            
                          }
                        
-                         break;
+                       break;
              
 
      }
